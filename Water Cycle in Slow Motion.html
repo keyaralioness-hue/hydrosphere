@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Water Cycle in Slow Motion</title>
+<style>
+:root{--bg:#e6f4fb;--fg:#0b2a4a;--card:#fff;--chip:#d3e9f5;--ac:#ffd23f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1b26;--fg:#e4f2fb;--card:#14293a;--chip:#1c3a50}}
+:root[data-theme="dark"]{--bg:#0d1b26;--fg:#e4f2fb;--card:#14293a;--chip:#1c3a50}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Poppins,"Segoe UI",Arial,sans-serif}
+#app{max-width:1280px;margin:0 auto;padding:12px}#app:fullscreen{background:var(--bg);overflow:auto;max-width:none}
+h1{font-size:clamp(18px,2.4vw,28px);margin:4px 0 10px}
+svg{display:block;width:100%;height:auto;border-radius:18px}
+.cap{display:grid;background:var(--card);border-radius:16px;padding:14px 18px;margin-top:10px;font-size:clamp(15px,1.9vw,24px);line-height:1.45}
+.cap>div{grid-area:1/1;opacity:0}
+.bar{height:8px;background:var(--chip);border-radius:8px;margin:10px 0;overflow:hidden}
+.bar i{display:block;height:100%;background:#1e8fd9;animation:pb 40s linear infinite}@keyframes pb{from{width:0}to{width:100%}}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;align-items:center}
+label{display:flex;align-items:center;gap:6px;font-size:clamp(13px,1.5vw,18px)}select{font:inherit;max-width:250px;padding:6px;border-radius:8px}
+button{font:inherit;font-size:clamp(13px,1.5vw,18px);font-weight:600;color:var(--fg);background:var(--chip);border:0;border-radius:12px;padding:9px 14px;cursor:pointer}
+button:focus-visible{outline:3px solid #1e8fd9}button.on{background:var(--ac);color:#0b2a4a}
+.lab{paint-order:stroke;stroke:#0a3a7a;stroke-width:9px;stroke-linejoin:round;fill:#fff;font-weight:700;font-size:44px}
+.rise{stroke:#fff;stroke-width:9;fill:none;stroke-linecap:round;animation:rise 7s linear infinite}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}15%,80%{opacity:.9}100%{transform:translate(var(--dx),var(--dy));opacity:0}}
+.fall{stroke:#cfeaff;stroke-width:6;stroke-linecap:round;animation:fall 1.6s linear infinite}
+@keyframes fall{0%{transform:translateY(0);opacity:0}10%{opacity:1}100%{transform:translateY(300px);opacity:0}}
+.snow{fill:#fff;animation:snow 5s linear infinite}
+@keyframes snow{0%{transform:translate(0,0);opacity:0}10%{opacity:1}100%{transform:translate(20px,170px);opacity:0}}
+.sink{fill:#6cc6ff;animation:sink 3s linear infinite}
+@keyframes sink{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(120px);opacity:0}}
+.dash{fill:none;stroke-linecap:round;stroke-dasharray:22 18;animation:dash 2.5s linear infinite}@keyframes dash{to{stroke-dashoffset:-80}}
+.sway{animation:sway 6s ease-in-out infinite alternate}@keyframes sway{to{transform:translateX(-70px)}}
+.spin,.pulse,.cl{transform-box:fill-box;transform-origin:center}
+.spin{animation:spin 40s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.pulse{animation:pulse 6s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.15);opacity:.4}}
+.cl{animation:cl 40s linear infinite}
+@keyframes cl{0%,20%{transform:scale(.7);opacity:.55}40%,60%{transform:scale(1.1);opacity:1}80%,100%{transform:scale(.7);opacity:.55}}
+.shade{fill:#6f84a0;opacity:0;animation:shade 40s linear infinite}
+@keyframes shade{0%,35%{opacity:0}45%,60%{opacity:.8}75%,100%{opacity:0}}
+.g0,.g1,.g2,.g3,.g4{opacity:0}
+@media (prefers-reduced-motion:reduce){.pulse,.spin{animation:none}}
+</style></head><body>
+<div id="app">
+<h1>The water cycle in slow motion · Grade 10 · Unit 1 · Lesson 1</h1>
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated water cycle: evaporation, condensation, precipitation, surface flow, infiltration and groundwater">
+<defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fc3ff"/><stop offset="1" stop-color="#e6f7ff"/></linearGradient></defs>
+<rect width="1600" height="900" fill="url(#sk)"/>
+<circle class="pulse" cx="200" cy="150" r="105" fill="#ffd23f" opacity=".3"/>
+<circle class="spin" cx="200" cy="150" r="82" fill="none" stroke="#ffc400" stroke-width="8" stroke-dasharray="14 16"/>
+<circle cx="200" cy="150" r="62" fill="#ffd23f"/>
+<rect x="0" y="560" width="660" height="340" fill="#1f78c8"/>
+<g id="waves" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="5" stroke-linecap="round"></g>
+<path d="M640 560L760 520L900 330L1020 430L1120 300L1260 450L1400 400L1600 520V900H640Z" fill="#5aa65a"/>
+<rect x="640" y="665" width="960" height="235" fill="#e3bd6a"/>
+<path d="M640 760Q900 735 1100 770T1600 750V805Q1350 830 1100 805T640 805Z" fill="#4aa3e0"/>
+<path d="M860 380L900 330L940 380L912 370L890 386Z M1070 355L1120 300L1170 355L1142 345L1116 362Z" fill="#fff"/>
+<rect x="1372" y="360" width="16" height="64" fill="#6b4226"/><circle cx="1380" cy="330" r="50" fill="#2e9e4f"/>
+<g class="g3"><g id="flow"><path class="dash" stroke="#2f9bf0" stroke-width="9" d="M900 400Q850 470 760 540T650 568"/><path class="dash" stroke="#2f9bf0" stroke-width="9" d="M1120 360Q1000 490 900 555Q770 590 650 575" style="animation-delay:-1s"/></g><g id="sink"></g>
+<text class="lab" x="330" y="520">Surface flow</text><text class="lab" x="1130" y="705">Infiltration</text></g>
+<g class="g4"><path class="dash" stroke="#fff" stroke-width="8" d="M1560 775Q1350 795 1100 778T660 772"/><text class="lab" x="760" y="870">Groundwater flows to the sea</text></g>
+<g class="g0"><g id="vap"></g><text class="lab" x="40" y="520">Evaporation</text><text class="lab" x="1130" y="470">Transpiration</text></g>
+<g id="clouds"></g>
+<g class="g1"><text class="lab" x="560" y="80">Condensation → clouds</text></g>
+<g class="g2"><g id="rain"></g><text class="lab" x="380" y="330">Precipitation</text></g>
+<text class="lab" x="50" y="740">Sea (salt water)</text>
+</svg>
+<div class="cap">
+<div class="c0"><b>1 · Evaporation</b> The Sun heats seas, rivers and lakes, so liquid water changes into water vapor. Plants add vapor by transpiration, and living organisms by respiration and excretion.</div>
+<div class="c1"><b>2 · Condensation</b> Rising vapor cools and changes back into tiny liquid droplets. The droplets gather and form clouds.</div>
+<div class="c2"><b>3 · Precipitation</b> Droplets grow heavy and fall as rain or snow. Snow stays frozen on cold mountain tops.</div>
+<div class="c3"><b>4 · Surface flow &amp; infiltration</b> Water runs over the land to rivers and the sea. Some leaks through soil pores and sedimentary rocks and forms groundwater.</div>
+<div class="c4"><b>5 · Collection</b> Groundwater moves slowly toward the sea. The cycle never stops: it is a nearly closed system, so Earth’s water is reused again and again.</div>
+</div>
+<div class="bar"><i></i></div>
+<div class="row" id="chips"><button class="h0">1 Evaporation</button><button class="h1">2 Condensation</button><button class="h2">3 Precipitation</button><button class="h3">4 Flow &amp; infiltration</button><button class="h4">5 Collection</button></div>
+<div class="row"><button id="pp">Pause</button><button data-r=".25">0.25× slower</button><button data-r=".5" class="on">0.5× slow</button><button data-r="1">1× normal</button><button id="fs">Full screen</button></div>
+<div class="row"><button id="snd">🔊 Start sound &amp; narration</button><label>Voice <select id="vo"></select></label><label>Effects <input id="vol" type="range" min="0" max="1" step=".05" value=".6"></label></div>
+</div>
+<script>
+const win=[[3,22],[18,42],[38,62],[58,84],[78,97]];let css='';
+win.forEach(([a,b],i)=>{css+=`@keyframes k${i}{0%,${a-3}%{opacity:0}${a}%,${b-3}%{opacity:1}${b}%,100%{opacity:0}}.g${i}{animation:k${i} 40s linear infinite}`});
+function kf(n,s,e,on,off){let t=`@keyframes ${n}{`;t+=s==0?`0%,${e-1}%{${on}}`:`0%,${s-1}%{${off}}${s}%,${e-1}%{${on}}`;t+=e<100?`${e}%,100%{${off}}}`:`100%{${off}}}`;return t+`.${n}{animation:${n} 40s linear infinite}`}
+for(let i=0;i<5;i++){css+=kf('c'+i,i*20,i*20+20,'opacity:1','opacity:0');css+=kf('h'+i,i*20,i*20+20,'background:#ffd23f;color:#0b2a4a','background:var(--chip);color:var(--fg)')}
+document.head.appendChild(Object.assign(document.createElement('style'),{textContent:css}));
+const NS='http://www.w3.org/2000/svg';
+function el(p,t,at,st){const e=document.createElementNS(NS,t);for(const k in at)e.setAttribute(k,at[k]);if(st)e.style.cssText=st;document.getElementById(p).appendChild(e);return e}
+let w='';for(let y of[590,625])for(let x=-120;x<720;x+=80)w+=`M${x} ${y}q40 -22 80 0`;
+el('waves','path',{d:w,class:'sway'});
+for(let i=0;i<9;i++){const x=90+i*55;const g=el('vap','g',{transform:`translate(${x},560)`});
+ const p=document.createElementNS(NS,'path');p.setAttribute('d','M0 0q22-30 0-60t0-60');p.setAttribute('class','rise');p.style.cssText=`--dx:${(780-x)*.6}px;--dy:-330px;animation-delay:-${i*.8}s`;g.appendChild(p)}
+for(let i=0;i<5;i++){const g=el('vap','g',{transform:`translate(${1330+i*20},290)`});
+ const p=document.createElementNS(NS,'path');p.setAttribute('d','M0 0q16-22 0-44t0-44');p.setAttribute('class','rise');p.style.cssText=`--dx:-230px;--dy:-150px;animation-delay:-${i*1.3}s`;g.appendChild(p)}
+function cloud(x,y,s){const g=el('clouds','g',{transform:`translate(${x},${y}) scale(${s})`});const c=document.createElementNS(NS,'g');c.setAttribute('class','cl');g.appendChild(c);
+ [[-60,15,60,34],[0,-8,70,44],[62,15,60,34],[0,28,105,26]].forEach(([cx,cy,rx,ry])=>{for(const k of['','shade']){const e=document.createElementNS(NS,'ellipse');e.setAttribute('cx',cx);e.setAttribute('cy',cy);e.setAttribute('rx',rx);e.setAttribute('ry',ry);if(k)e.setAttribute('class',k);else e.setAttribute('fill','#fff');c.appendChild(e)}})}
+cloud(800,160,1.2);cloud(1130,135,1);
+for(let i=0;i<14;i++)el('rain','path',{d:'M0 0l-6 34',transform:`translate(${735+i*12},240)`,class:'fall'},`animation-delay:-${(i*.37)%1.6}s`);
+for(let i=0;i<9;i++)el('rain','circle',{cx:1040+i*24,cy:210,r:7,class:'snow'},`animation-delay:-${(i*.83)%5}s`);
+for(let i=0;i<8;i++)el('sink','circle',{cx:720+i*100,cy:620,r:9,class:'sink'},`animation-delay:-${(i*.9)%3}s`);
+let rate=.5,paused=false,hold=false;
+const all=()=>document.getAnimations();
+function apply(){all().forEach(a=>{a.playbackRate=rate;(paused||hold)?a.pause():a.play()})}
+apply();
+document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{rate=+b.dataset.r;document.querySelectorAll('[data-r]').forEach(x=>x.classList.toggle('on',x===b));apply()});
+document.getElementById('pp').onclick=e=>{paused=!paused;e.target.textContent=paused?'Play':'Pause';apply()};
+document.querySelectorAll('#chips button').forEach((b,i)=>b.onclick=()=>{all().forEach(a=>a.currentTime=i*8000)});
+document.getElementById('fs').onclick=()=>{const a=document.getElementById('app');document.fullscreenElement?document.exitFullscreen():a.requestFullscreen&&a.requestFullscreen()};
+const TXT=['Step one: evaporation. The heat of the Sun warms the water of seas, rivers and lakes. Liquid water changes into water vapor and rises into the air. Plants also release vapor through transpiration, and animals through respiration.','Step two: condensation. As the vapor rises, it cools and changes back into tiny droplets of liquid water. Millions of droplets gather together and form clouds.','Step three: precipitation. When the droplets become heavy, they fall to the Earth as rain. In cold places, they fall as snow.','Step four: surface flow and infiltration. Some water runs over the land into rivers and the sea. Some leaks through soil pores and sedimentary rocks, and forms groundwater.','Step five: collection. Groundwater moves slowly back toward the sea. And so the cycle starts again. It is a nearly closed system, so the water on Earth is used again and again.'];
+const synth=window.speechSynthesis,sndB=document.getElementById('snd'),voEl=document.getElementById('vo'),volEl=document.getElementById('vol');
+let on=false,ac,master,WB,BB,L={},cur=0,sp=null,tm=[];
+const T={sea:[.10,.06,.04,.08,.12],wind:[.09,.11,.03,.03,.03],rain:[0,0,.12,.02,0],str:[0,0,0,.10,.03],und:[0,0,0,.05,.14]};
+const voices=()=>synth?synth.getVoices().filter(v=>/^en/i.test(v.lang)):[];
+function fillVoices(){const vs=voices();voEl.innerHTML=vs.map(v=>`<option>${v.name}</option>`).join('');const p=vs.find(v=>/natural|google us|samantha|aria|jenny|zira|david/i.test(v.name))||vs[0];if(p)voEl.value=p.name}
+if(synth){fillVoices();synth.onvoiceschanged=fillVoices}
+function nbuf(brown){const b=ac.createBuffer(1,ac.sampleRate*3,ac.sampleRate),d=b.getChannelData(0);let l=0;for(let i=0;i<d.length;i++){const w=Math.random()*2-1;if(brown){l=(l+.02*w)/1.02;d[i]=l*3.5}else d[i]=w}return b}
+function layer(buf,type,f,q){const s=ac.createBufferSource();s.buffer=buf;s.loop=true;const fl=ac.createBiquadFilter();fl.type=type;fl.frequency.value=f;fl.Q.value=q;const g=ac.createGain();g.gain.value=0;s.connect(fl);fl.connect(g);g.connect(master);s.start();return{g,fl}}
+function lfo(r,d,t){const o=ac.createOscillator(),g=ac.createGain();o.frequency.value=r;g.gain.value=d;o.connect(g);g.connect(t);o.start()}
+function initAudio(){ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=+volEl.value;master.connect(ac.destination);WB=nbuf(0);BB=nbuf(1);
+L.sea=layer(BB,'lowpass',500,.5);lfo(.12,.05,L.sea.g.gain);L.wind=layer(WB,'bandpass',900,.8);lfo(.2,.02,L.wind.g.gain);lfo(.15,300,L.wind.fl.frequency);
+L.rain=layer(WB,'highpass',3500,.5);L.str=layer(WB,'bandpass',1300,3);lfo(7,500,L.str.fl.frequency);L.und=layer(BB,'lowpass',160,.7)}
+function blip(f,d,v,t=0){const n=ac.currentTime+t,o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(f,n);o.frequency.exponentialRampToValueAtTime(f*1.5,n+d*.6);g.gain.setValueAtTime(v,n);g.gain.exponentialRampToValueAtTime(.0001,n+d);o.connect(g);g.connect(master);o.start(n);o.stop(n+d+.05)}
+const bell=()=>[660,990].forEach((f,i)=>blip(f,1.6,.12/(i+1)));
+const chirp=()=>{const b=2400+Math.random()*900;blip(b,.12,.05);blip(b*1.1,.1,.05,.14);blip(b*.9,.12,.05,.3)};
+function thunder(){const s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain(),n=ac.currentTime;s.buffer=BB;f.type='lowpass';f.frequency.value=150;g.gain.setValueAtTime(.001,n);g.gain.linearRampToValueAtTime(.6,n+.4);g.gain.exponentialRampToValueAtTime(.001,n+4.5);s.connect(f);f.connect(g);g.connect(master);s.start(n,Math.random()*1.5);s.stop(n+4.6)}
+function speak(s){if(!synth)return;synth.cancel();const u=new SpeechSynthesisUtterance(TXT[s]),v=voices().find(x=>x.name===voEl.value);if(v){u.voice=v;u.lang=v.lang}else u.lang='en-US';u.rate=.92;u.onend=u.onerror=()=>{if(sp===u){sp=null;if(hold){hold=false;apply()}}};sp=u;synth.speak(u)}
+function onStage(s){if(!on)return;tm.forEach(clearTimeout);tm=[];bell();for(const k in T)L[k].g.gain.setTargetAtTime(T[k][s],ac.currentTime,1.2);speak(s);
+if(s==0)tm.push(setTimeout(chirp,2500),setTimeout(chirp,6000),setTimeout(chirp,9500));if(s==2)tm.push(setTimeout(thunder,3000+Math.random()*4000))}
+setInterval(()=>{const a=all().find(x=>x.animationName==='pb');if(!a)return;const t=(a.currentTime%40000)/400,s=Math.min(4,Math.floor(t/20));
+if(s!==cur){cur=s;onStage(s)}if(on&&sp&&(t%20)>19.2&&!hold&&!paused){hold=true;apply()}},120);
+setInterval(()=>{if(on&&!paused&&cur>=3&&Math.random()<.6)blip(900+Math.random()*700,.25,.05)},600);
+sndB.onclick=()=>{if(!on){on=true;if(!ac)initAudio();ac.resume();sndB.textContent='🔇 Stop sound & narration';onStage(cur)}else{on=false;tm.forEach(clearTimeout);synth&&synth.cancel();sp=null;hold=false;apply();ac.suspend();sndB.textContent='🔊 Start sound & narration'}};
+volEl.oninput=()=>{if(master)master.gain.value=+volEl.value};
+document.getElementById('pp').addEventListener('click',()=>{if(synth)paused?synth.pause():synth.resume();if(ac&&on)paused?ac.suspend():ac.resume()});
+document.querySelectorAll('#chips button').forEach((b,i)=>b.addEventListener('click',()=>{cur=i;onStage(i)}));
+</script></body></html>
